@@ -1,2 +1,2 @@
 # My Notes
-A basic notebook with CRUD functionality. Contains both back-end and front-end.
+A basic notebook with CRUD functionality. This is only the front end.
