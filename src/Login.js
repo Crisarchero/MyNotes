@@ -18,7 +18,7 @@ const Login = () => {
 
     let json = JSON.stringify(obj)
 
-    let response = await fetch("http://localhost:5000/users/login", {
+    let response = await fetch("https://mynotesbackend.up.railway.app/users/login", {
       method: 'POST',
       headers: {
         'Accept': 'application/json',

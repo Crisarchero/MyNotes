@@ -43,7 +43,7 @@ async function deleteLink(id, object) {
     link = "/users/" + id
   }
 
-  let response = await fetch("http://localhost:5000" + link, {
+  let response = await fetch("https://mynotesbackend.up.railway.app" + link, {
     method: 'DELETE',
     headers: {
       'Accept': 'application/json',

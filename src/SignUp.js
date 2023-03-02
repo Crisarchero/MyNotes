@@ -22,7 +22,7 @@ const SignUp = () => {
           
               let json = JSON.stringify(obj)
           
-              let response = await fetch("http://localhost:5000/users/add", {
+              let response = await fetch("https://mynotesbackend.up.railway.app/users/add", {
                 method: 'POST',
                 headers: {
                   'Accept': 'application/json',

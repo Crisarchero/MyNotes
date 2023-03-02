@@ -18,7 +18,7 @@ const Settings = () => {
           "name": username.value,
         }
         let json = JSON.stringify(obj)
-        let response = await fetch("http://localhost:5000/users/edit/" + id, {
+        let response = await fetch("https://mynotesbackend.up.railway.app/users/edit/" + id, {
           method: 'PUT',
           headers: {
             'Accept': 'application/json',

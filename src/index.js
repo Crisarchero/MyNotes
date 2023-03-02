@@ -51,7 +51,7 @@ const router = createBrowserRouter([
           const token = sessionStorage.getItem('token')
           if(token){
 
-            let response = await fetch(`http://localhost:5000/notebooks/${params.notebookId}`,
+            let response = await fetch(`https://mynotesbackend.up.railway.app/notebooks/${params.notebookId}`,
             {
               method: "GET",
               headers: {
@@ -87,7 +87,7 @@ const router = createBrowserRouter([
           const token = sessionStorage.getItem('token')
           let nextPage = " "
           let previousPage = " "
-          let response = await fetch(`http://localhost:5000/pages/${params.pageId}`, {
+          let response = await fetch(`https://mynotesbackend.up.railway.app/pages/${params.pageId}`, {
             method: "GET",
             headers: {
               'Content-Type': 'application/json',
@@ -96,7 +96,7 @@ const router = createBrowserRouter([
             }
           });
           let page = await response.json()
-          let responseSecond = await fetch(`http://localhost:5000/notebooks/${page.notebook}`,
+          let responseSecond = await fetch(`https://mynotesbackend.up.railway.app/notebooks/${page.notebook}`,
             {
               method: "GET",
               headers: {
@@ -136,7 +136,7 @@ const router = createBrowserRouter([
         action: pageAction,
         loader: async ({ params }) => {
           const token = sessionStorage.getItem('token')
-          let response = await fetch(`http://localhost:5000/pages/${params.pageId}`,  {
+          let response = await fetch(`https://mynotesbackend.up.railway.app/pages/${params.pageId}`,  {
             method: "GET",
             headers: {
               'Content-Type': 'application/json',

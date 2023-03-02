@@ -47,7 +47,7 @@ export async function loader() {//Load the user's notebooks.
       const user = jwt_decode(token)
 
 
-      let response = await fetch(`http://localhost:5000/notebooks/owner/${user.id}`, {
+      let response = await fetch(`https://mynotesbackend.up.railway.app/notebooks/owner/${user.id}`, {
         method: "GET",
         headers: {
           'Content-Type': 'application/json',
@@ -112,7 +112,7 @@ export async function pageAction() {//Add a new page.
   let json = JSON.stringify(obj)
 
   if (page) {//If the user is editing a page.
-    let response = await fetch("http://localhost:5000/pages/edit/" + page.value, {
+    let response = await fetch("https://mynotesbackend.up.railway.app/pages/edit/" + page.value, {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
@@ -128,7 +128,7 @@ export async function pageAction() {//Add a new page.
 
   else { //If the user is adding a new page.
 
-    let response = await fetch("http://localhost:5000/pages/add", {
+    let response = await fetch("https://mynotesbackend.up.railway.app/pages/add", {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
@@ -159,7 +159,7 @@ export async function notebookAction() { //Add a new notebook to the database.
 
   let json = JSON.stringify(obj)
 
-  let response = await fetch("http://localhost:5000/notebooks/add", {
+  let response = await fetch("https://mynotesbackend.up.railway.app/notebooks/add", {
     method: 'POST',
     headers: {
       'Accept': 'application/json',
