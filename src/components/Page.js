@@ -9,7 +9,7 @@ const Page = () => {
   const previousPage = pages[2]
   return (
 
-    <div className="container-fluid p-0 d-flex flex-column justify-content-between">
+    <div className="container-fluid p-0 d-flex flex-column justify-content-between overflow-auto">
       <div>
         <div className="d-flex my-2  m-3 p-2 justify-content-between">
 
@@ -25,7 +25,7 @@ const Page = () => {
         {page.content ?
 
           page.content.map((article) => (
-            <article className="p-3 mx-5 my-3">
+            <article className="p-3 mx-5 my-3" key = {page.content.indexOf(article)}>
 
               <h2>{article.header}</h2>
               <p>{article.paragraph}</p>

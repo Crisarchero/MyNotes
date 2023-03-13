@@ -11,10 +11,10 @@ const SignUp = () => {
         const username = document.getElementById("username").value
         const password = document.getElementById('password').value
         const confirmPassword = document.getElementById('confirmPassword').value
-        console.log(password, confirmPassword)
+   
         
         if(confirmPassword === password){
-            console.log("passwords match")
+          
             let obj = {
                 "name": username,
                 "password": password
@@ -32,10 +32,10 @@ const SignUp = () => {
               })
 
               let res = await response.json()
-              console.log(res.status)
+        
               if (res.status === 'ok'){
                 alert("Account was created successfully! Please log in.")
-                navigate('/MyNotes/login')
+                navigate('/login')
               }
               else{
                 let error = document.getElementById('error')

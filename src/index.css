@@ -18,12 +18,11 @@ body {
 
   }
   
-  .open-sidebar{
-   
-  }
-
+ 
   .closed-sidebar{
-
+    position:relative;
+    z-index:1;
+  
   }
 
   

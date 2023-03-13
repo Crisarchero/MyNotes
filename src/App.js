@@ -16,15 +16,14 @@ function App() {
     if (token && typeof token === "string") {
       const user = jwt_decode(token, { header: true })
       if (!user) {
-        console.log("No user")
+     
         sessionStorage.removeItem('token')
-        navigate("/MyNotes/login")
+        navigate("/login")
       }
 
     }
     else {
-      console.log("No token")
-      navigate("/MyNotes/login")
+      navigate("/login")
     }
   })
 
@@ -122,7 +121,7 @@ export async function pageAction() {//Add a new page.
       body: json
     })
     await response.json()
-    return response
+    return redirect("/")
 
   }
 

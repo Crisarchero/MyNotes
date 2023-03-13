@@ -6,9 +6,10 @@ const Intro = () => {
             <div className = "my-5 col-12 col-md-5 p-md-5">
                 <h1 className = "display-1">My Notes</h1>
                 <p>
-                    <b>MyNotes</b> is a concept of an online, digital notebook.
-                    Though it is functional, this is mostly a concept site.
-                    Please don't store any sensitive information.  It's vulnerable!
+                    <b>MyNotes</b> is an online, digital notebook.
+                    Though it is functional, it is mostly just a <b>proof of concept</b> and not meant for any serious usage. 
+                    Please don't store any sensitive information.  It's vulnerable!  To test use the username 'guest' with password
+                    'easypassword'.
                 </p>
             </div>
             <Login/>

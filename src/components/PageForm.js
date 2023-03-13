@@ -6,12 +6,16 @@ import { BsTrash } from 'react-icons/bs'
 
 const PageForm = (prop) => {
 
+  //Fetching data
   const notebookId = useLoaderData()
   const navigate = useNavigate()
 
+  //Creating a counter to track how many sections there are.
   const [counter, setCounter] = useState(prop.page ?
     prop.page.content.length : 0
   )
+
+  //Creating the plus and minus signs for each section.
   const eachButton = <div className="">
 
     <button className="btn btn-white float-end" title="Add section below" onClick={(event) => {
@@ -28,11 +32,11 @@ const PageForm = (prop) => {
     }}>-</button>
   </div>
 
-
+//Creating the group of sections.
   const [eachArticle, setArticle] = useState(prop.page ?
 
     prop.page.content.map((article) => (
-      <FormSection counter={prop.page.content.indexOf(article)}
+      <FormSection key = {prop.page.content.indexOf(article)} counter={prop.page.content.indexOf(article)}
         paragraph={article.paragraph}
         header={article.header}
         button={eachButton}
@@ -42,7 +46,8 @@ const PageForm = (prop) => {
     ))
     :
     [])
-
+ 
+  //A funciton that allows the user to add additional sections.
   const addArticle = (event, top) => {
     event.preventDefault()
     let source = event.target.parentNode.parentNode.parentNode.id
@@ -95,8 +100,8 @@ const PageForm = (prop) => {
 
 
   }
-
-  const removeArticle = (event) => { //Removing the form section from which the button was clicked.
+  //Removing the form section from which the button was clicked.
+  const removeArticle = (event) => { 
     event.preventDefault()
 
     let source = event.target.parentNode.parentNode.parentNode.id
@@ -137,9 +142,9 @@ const PageForm = (prop) => {
       {//The first form section.
       }
       <div className="d-flex flex-column w-100 border my-3 py-2 shadow">
-        <label for="name">Page Name:</label>
-        <input className="m-2 border rounded" type="text" name="name" id="name" maxlength="25" defaultValue={prop.page ? prop.page.name : ""} required />
-        <label for="summary">Summary:</label>
+        <label >Page Name:</label>
+        <input className="m-2 border rounded" type="text" name="name" id="name" maxLength="25" defaultValue={prop.page ? prop.page.name : ""} required />
+        <label >Summary:</label>
         <textarea className="m-2 border rounded" name="summary" id="summary" defaultValue={prop.page ? prop.page.summary : ""} required></textarea>
         <div>
           <button className={"btn btn-white float-end"} onClick={(event) => {
@@ -156,7 +161,7 @@ const PageForm = (prop) => {
       {//Buttons to cancel or submit.
       }
       <div>
-        <button className="btn btn-info" type="submit">Create New</button>
+        <button className="btn btn-info" type="submit">{prop.page ? "Edit Page" : "Create New"}</button>
         <button className="btn btn-info" onClick={() => { navigate(-1) }}>Cancel</button>
       </div>
     </Form>

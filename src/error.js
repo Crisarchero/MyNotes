@@ -10,7 +10,7 @@ export default function ErrorPage() {
     
     if (error.message === "Invalid token specified"){
       
-      setTimeout(function(){navigate('/MyNotes/login')}, 2000)
+      setTimeout(function(){navigate('/login')}, 2000)
     }
     
   })

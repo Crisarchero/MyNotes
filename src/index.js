@@ -193,7 +193,7 @@ const router = createBrowserRouter([
     ]
   },
   {
-    path: '/MyNotes/login',
+    path: '/login',
     element: <Intro />
   },
   {

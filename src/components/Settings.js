@@ -1,7 +1,10 @@
 import React from 'react'
 import jwt_decode from 'jwt-decode'
+import {useNavigate} from 'react-router-dom'
+
 
 const Settings = () => {
+  const navigate = useNavigate()
   async function changeName(event) {
     event.preventDefault()
 
@@ -33,7 +36,7 @@ const Settings = () => {
         if (res.error) {
           error.value = res.error
         }
-        else{
+        else {
           error.value = "Username changed successfully!"
         }
       }
@@ -43,6 +46,17 @@ const Settings = () => {
       }
     }
 
+  }
+
+  function logOut(event){
+      event.preventDefault()
+      const token = sessionStorage.getItem('token')
+      if (typeof token === "string") {
+       sessionStorage.removeItem('token')
+       alert("Logged out!")
+       navigate('/login')
+
+      }
   }
   return (
     <div className="ps-5 pt-5 position-relative col-md-6">
@@ -54,9 +68,16 @@ const Settings = () => {
 
         </li>
 
-        <li className="list-group-item py-3"><a href={"/delete/user"} className=" btn link-warning">Delete Account</a></li>
+        <li className="list-group-item py-3  d-flex flex-wrap justify-content-between align-items-center">
+          <button className="btn text-primary" onClick={(event) => { logOut(event) }}>Log Out</button>
+      
+        </li>
 
-        <input id="username-error" name="username-error" className="mx-5 border-0 text-center bg-transparent" disabled/>
+        <li className="list-group-item py-3"><a href={"/delete/user"} className=" btn link-warning">Delete Account</a>
+        </li>
+
+
+        <input id="username-error" name="username-error" className="mx-5 border-0 text-center bg-transparent" disabled />
       </ul>
     </div>
   )

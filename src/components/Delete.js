@@ -12,8 +12,8 @@ const Delete = () => {
     id = data
     object = "user"
   }
-  console.log(data)
-  console.log(object)
+
+ 
   let navigate = useNavigate()
 
   return (
@@ -57,7 +57,7 @@ async function deleteLink(id, object) {
   alert(message)
   if (object === 'user') {
     sessionStorage.clear()
-    window.location.href = "/MyNotes/login"
+    window.location.href = "/login"
   }
   else {
     window.location.href = "/"

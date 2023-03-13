@@ -7,7 +7,7 @@ const Sidebar = (props) => {
 
 
   return (
-    <div className={`bg-light z-1 p-4  ${isSideBarOpen ? "open-sidebar" : "closed-sidebar"}`}>
+    <div className={`${isSideBarOpen ? "z-1 p-4 bg-light open-sidebar" : "p-2 border closed-sidebar"}`}>
 
 
       {
@@ -23,7 +23,9 @@ const Sidebar = (props) => {
           </div>
 
           :
-          <HiArrowSmRight className={"bg-white"} onClick={() => setSideBar(true)} />
+          <button className = {"btn btn-light shadow-sm"} onClick={() => setSideBar(true)}>
+            <HiArrowSmRight className={""}  />
+            </button>
       }
 
     </div>
