@@ -1,7 +1,7 @@
 
 import Header from './Header'
 import Sidebar from './Sidebar'
-import { Outlet, redirect} from 'react-router-dom'
+import { Outlet} from 'react-router-dom'
 
 
 const Dashboard = (prop) => {

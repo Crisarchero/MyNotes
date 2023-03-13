@@ -1,7 +1,7 @@
-import { useState, useEffect } from 'react'
+import { useEffect } from 'react'
 
 import { useNavigate, redirect, useLoaderData } from 'react-router-dom'
-import { createForm } from './components/PageForm'
+
 import Dashboard from './components/Dashboard'
 import jwt_decode from 'jwt-decode';
 
@@ -18,13 +18,13 @@ function App() {
       if (!user) {
         console.log("No user")
         sessionStorage.removeItem('token')
-        navigate("/login")
+        navigate("/MyNotes/login")
       }
 
     }
     else {
       console.log("No token")
-      navigate("/login")
+      navigate("/MyNotes/login")
     }
   })
 

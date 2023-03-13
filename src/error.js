@@ -10,11 +10,10 @@ export default function ErrorPage() {
     
     if (error.message === "Invalid token specified"){
       
-      setTimeout(function(){navigate('/login')}, 2000)
+      setTimeout(function(){navigate('/MyNotes/login')}, 2000)
     }
     
-  },[]
-    )
+  })
 
   return (
     <div className = {"d-flex flex-column justify-content-center align-items-center vh-100"} id="error-page">

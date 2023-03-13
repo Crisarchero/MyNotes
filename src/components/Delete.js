@@ -1,10 +1,10 @@
 import React from 'react'
-import { useNavigate, useLoaderData, redirect } from 'react-router-dom'
+import { useNavigate, useLoaderData} from 'react-router-dom'
 const Delete = () => {
   let data = useLoaderData()
   let id = ""
   let object = ""
-  if (data.isArray) {
+  if (Array.isArray(data)) {
     id = data[0]
     object = data[1]
   }
@@ -12,7 +12,8 @@ const Delete = () => {
     id = data
     object = "user"
   }
-
+  console.log(data)
+  console.log(object)
   let navigate = useNavigate()
 
   return (
@@ -56,7 +57,7 @@ async function deleteLink(id, object) {
   alert(message)
   if (object === 'user') {
     sessionStorage.clear()
-    window.location.href = "/login"
+    window.location.href = "/MyNotes/login"
   }
   else {
     window.location.href = "/"

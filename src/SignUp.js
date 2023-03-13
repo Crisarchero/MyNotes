@@ -35,7 +35,7 @@ const SignUp = () => {
               console.log(res.status)
               if (res.status === 'ok'){
                 alert("Account was created successfully! Please log in.")
-                navigate('/login')
+                navigate('/MyNotes/login')
               }
               else{
                 let error = document.getElementById('error')

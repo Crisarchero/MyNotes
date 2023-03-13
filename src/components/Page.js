@@ -50,7 +50,3 @@ const Page = () => {
 }
 
 export default Page
-
-function editMode() {
-
-}
