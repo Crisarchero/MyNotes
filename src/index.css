@@ -1,5 +1,6 @@
 body {
     margin: 0;
+    overflow-x:hidden;
   
   }
   
@@ -12,9 +13,16 @@ body {
   
   .pagelist-background{
     background-image:url("/public/groovepaper.png");
-
     background-position:center;
     background-color:rgb(214, 208, 208);
+
+  }
+  
+  .open-sidebar{
+   
+  }
+
+  .closed-sidebar{
 
   }
 

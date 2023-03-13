@@ -7,7 +7,7 @@ const Sidebar = (props) => {
 
 
   return (
-    <div className={`position-relative bg-light z-1 p-4  ${isSideBarOpen ? "col-sm-12 col-md-5 book-background overflow-auto" : "col-sm-1"}`}>
+    <div className={`bg-light z-1 p-4  ${isSideBarOpen ? "open-sidebar" : "closed-sidebar"}`}>
 
 
       {
